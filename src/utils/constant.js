@@ -4,6 +4,6 @@ export const links = [
   { navlink: "Create Recipe", routeLink: "/create-recipe" },
 ];
 
-export const BASE_URL = import.meta.env.VITE_BASE_URL;
+export const BASE_URL = "https://recipes-mern-app.onrender.com";
 export const USER_URL = "/api/users";
 export const RECIPE_URL = "/api/recipes";
