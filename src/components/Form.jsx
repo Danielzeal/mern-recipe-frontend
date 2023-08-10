@@ -82,9 +82,11 @@ const Form = ({
         onChange={(e) => setIngredient(e.target.value)}
         onKeyDown={handleIngredients}
       />
-      <p className='text-xs text-dark px-4'>Press Enter to add ingredient.</p>
+      <p className='text-xs text-dark px-4'>
+        Press Enter or . to add ingredient.
+      </p>
       {ingredients.length ? (
-        <div className='flex gap-2 scrollbar-hide whitespace-nowrap overflow-x-scroll'>
+        <div className='flex gap-2 flex-wrap'>
           {ingredients.map((ingre, ind) => (
             <div
               key={ind}
@@ -112,7 +114,7 @@ const Form = ({
         onKeyDown={handleInstruction}
       />
       <p className='text-xs text-dark px-4'>
-        Press Enter key to add instruction.
+        Press Enter or . key to add instruction.
       </p>
       {instructions.length ? (
         <div className='flex flex-col gap-2'>

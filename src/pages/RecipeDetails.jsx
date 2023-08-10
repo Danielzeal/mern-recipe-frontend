@@ -49,20 +49,17 @@ const RecipeDetails = () => {
               <p className='font-body px-6'>{recipe?.description}</p>
             </div>
             <div>
-              <Heading text={"Ingredient"} />
-              <ul className='flex items-center gap-4 pl-6 scrollbar-hide whitespace-nowrap overflow-x-scroll'>
+              <Heading text={"Ingredients"} />
+              <ul className='px-6 '>
                 {recipe?.ingredients.map((ingredient, index) => (
-                  <li
-                    className='bg-extra_light py-2 px-6 rounded-3xl font-body'
-                    key={index}
-                  >
+                  <li key={index} className='list-disc list-inside'>
                     {ingredient}
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <Heading text={"Instruction"} />
+              <Heading text={"Instructions"} />
               {recipe?.instructions.map((instruct, index) => (
                 <div key={index} className='font-body px-6'>
                   <h4 className='font-semibold text-2xl'>Step {index + 1}:</h4>

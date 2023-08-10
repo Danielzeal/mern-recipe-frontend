@@ -23,7 +23,7 @@ const Card = ({ recipe }) => {
         userId: userDetail._id,
         recipeId: id,
       }).unwrap();
-      toast.success("Recipe added to favorite");
+      toast.info("Recipe added to favorite");
     } catch (error) {
       toast.error(error?.data?.message);
     }
@@ -35,7 +35,7 @@ const Card = ({ recipe }) => {
         userId: userDetail._id,
         recipeId: id,
       }).unwrap();
-      toast.success("Recipe removed from favorite");
+      toast.info("Recipe removed from favorite");
     } catch (error) {
       toast.error(error?.data?.message);
     }
@@ -49,6 +49,7 @@ const Card = ({ recipe }) => {
             src={recipe.recipe_image?.secure_url}
             alt={recipe.recipe_name}
             className='h-full w-full object-cover hover:scale-x-125 transition-all duration-150 ease-in cursor-pointer'
+            loading='lazy'
           />
         </Link>
         <div className='w-full bg-dark opacity-70 h-6 absolute bottom-0 p-4 flex gap-2 items-center text-extra_light font-body'>

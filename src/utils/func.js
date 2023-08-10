@@ -5,7 +5,7 @@ export const handleListsDelete = (oldList, i, setInstructions) => {
 
 export const handleListChange = (item, e, setItems, setItem) => {
   if (!item) return;
-  if (e.key === "Enter") {
+  if (e.key === "Enter" || e.key === ".") {
     setItems((prevIns) => [...prevIns, item]);
     setItem("");
   }
