@@ -14,7 +14,6 @@ export const handleListChange = (item, e, setItems, setItem) => {
 export const handleImage = (e, setImgFile) => {
   const file = e.target.files[0];
 
-  // transform the file so we can use it
   const reader = new FileReader();
   if (file) {
     reader.readAsDataURL(file);

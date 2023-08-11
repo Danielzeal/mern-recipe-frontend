@@ -1,13 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 import { links } from "../utils/constant";
-import { FaArrowDown, FaXmark } from "react-icons/fa6";
+import { FaXmark } from "react-icons/fa6";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../app/slices/authSlice";
 import { useLogoutMutation } from "../app/apis/usersApiSlice";
 import Button from "./Button";
 import Container from "./Container";
+import { FaListUl } from "react-icons/fa";
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
@@ -57,11 +58,8 @@ const Header = () => {
               className='hidden md:block w-10 h-10 rounded-full object-top object-cover'
               alt='user profile photo'
             />
-            <p
-              onClick={handleMenu}
-              className='md:hidden flex items-center gap-4 border-2 border-extra_light p-2 rounded-2xl'
-            >
-              {userDetail.name} <FaArrowDown />
+            <p className='md:hidden flex items-center gap-4'>
+              {userDetail.name} <FaListUl size={24} onClick={handleMenu} />
             </p>
             <Button
               className={"hidden md:block"}
@@ -108,7 +106,10 @@ const Header = () => {
             <Button
               className={"md:hidden text-2xl"}
               text={"Logout"}
-              onClick={handleLogout}
+              onClick={() => {
+                handleLogout();
+                handleMenu();
+              }}
               type={"button"}
             />
           </nav>

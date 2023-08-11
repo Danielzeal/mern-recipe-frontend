@@ -30,11 +30,8 @@ const Login = () => {
         dispatch(setCredentials({ ...data }));
         setEmail("");
         setPassword("");
-        toast.success("Used is logged in");
-
-        setTimeout(() => {
-          navigate("/");
-        }, 5000);
+        toast.success("User is logged in");
+        navigate("/");
       } else {
         toast.error("User could not logged in do try again");
       }

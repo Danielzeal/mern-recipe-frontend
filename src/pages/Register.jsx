@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { setCredentials } from "../app/slices/authSlice";
 import { Button } from "../components";
+import { handleImage } from "../utils/func";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -58,18 +59,7 @@ const Register = () => {
   };
 
   const handleImageChange = async (e) => {
-    const file = e.target.files[0];
-
-    // transform the file so we can use it
-    const reader = new FileReader();
-    if (file) {
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        setImgFile(reader.result);
-      };
-    } else {
-      setImgFile("");
-    }
+    handleImage(e, setImgFile);
   };
 
   return (
